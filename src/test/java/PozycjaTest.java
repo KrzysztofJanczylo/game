@@ -40,16 +40,15 @@ public class PozycjaTest {
         double wartoscPozycji = pozycja2.obliczWartosc();
         //then
         assertEquals(Double.valueOf(24), Double.valueOf(wartoscPozycji));
-
     }
 
     @Test
     public void testObliczWartoscPoZmianie(){
         //given
         Pozycja pozycja3 = new Pozycja("Cukier", 5, 4.80);
+
         //when
         pozycja3.setIleSztuk(10);
-
         double wartoscPozycji = pozycja3.obliczWartosc();
         //then
         assertEquals(Double.valueOf(48), Double.valueOf(wartoscPozycji));
@@ -58,10 +57,13 @@ public class PozycjaTest {
 
     @Test
     public void testToString(){
+
         //given
         Pozycja pozycja4 = new Pozycja("Jajka", 10, 0.6);
+
         //when
         System.out.println(pozycja4);
+
         //then
     }
 
