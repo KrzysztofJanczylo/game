@@ -1,12 +1,13 @@
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -48,12 +49,13 @@ public class Zamowienie {
         return suma;
     }
 
-    public String toString(){
+    public String toString() {
         String out = "Zamowienie:\n";
         for (Pozycja pozycja : pozycje) {
             out = out + pozycja.toString() + "\n";
         }
-        out = out + "Razem: " + String.format("%.2f zł",obliczWartosc());
+        out = out + "Razem: " + String.format("%.2f zł", obliczWartoscZRabatek()) + "\n";
+        out = out + "Rabat: " + String.format("%.2f zł", obliczWartosc() - obliczWartoscZRabatek());
 
         return out;
     }
@@ -79,5 +81,46 @@ public class Zamowienie {
         catch (IndexOutOfBoundsException e){
             System.out.println("Brak pozycji o zadanym indeksie");
         }
+    }
+
+    public static void zapiszZamowienie(Zamowienie z, String nazwaPliku){
+        try {
+            PrintWriter printWriter = new PrintWriter("pliki/" + nazwaPliku);
+            //printWriter.println("teścik");
+
+            for(Pozycja pozycja: z.getPozycje()){
+                printWriter.print(pozycja.getNazwaTowaru());
+                printWriter.print(";");
+                printWriter.print(pozycja.getIleSztuk());
+                printWriter.print(";");
+                printWriter.print(pozycja.getCena());
+                printWriter.print(";");
+                printWriter.println();
+            }
+
+            printWriter.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static Zamowienie wczytajZPliku(String nazwaPliku){
+        Zamowienie zamowienie = new Zamowienie();
+        try {
+            Scanner scanner = new Scanner(new File("pliki/" + nazwaPliku));
+
+            while (scanner.hasNextLine()){
+                String odzyt = scanner.nextLine();
+                String[] split = odzyt.split(";");
+                System.out.println(split[0]);
+                System.out.println(split[1]);
+                System.out.println(split[2]);
+                zamowienie.dodajPozycje(new Pozycja(split[0],Integer.valueOf(split[1]), Double.valueOf(split[2])));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return zamowienie;
     }
 }

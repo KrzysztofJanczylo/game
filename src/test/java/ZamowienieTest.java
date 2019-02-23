@@ -89,7 +89,7 @@ public class ZamowienieTest {
         assertTrue(zamowienie5.toString().contains("Razem: "));
         assertTrue(zamowienie5.toString().contains("Zamowienie:"));
         assertTrue(zamowienie5.toString().contains(
-                String.format("%.2f",zamowienie5.obliczWartosc())));
+                String.format("%.2f",zamowienie5.obliczWartoscZRabatek())));
 
     }
 
@@ -172,6 +172,48 @@ public class ZamowienieTest {
         zamowienie5.dodajPozycje(pozycja2);
         //then
         assertEquals(2, zamowienie5.getPozycje().size());
+    }
+    @Test
+    public void testSumyZRabatem() {
+        //given
+        Zamowienie zamowienie9 = new Zamowienie();
+        Pozycja pozycja = new Pozycja("chleb", 2, 2.50);
+        Pozycja pozycja2 = new Pozycja("maslo", 4, 7.50);
+        Pozycja pozycja3 = new Pozycja("kawa", 10, 9.50);
+
+        zamowienie9.dodajPozycje(pozycja);
+        zamowienie9.dodajPozycje(pozycja2);
+        zamowienie9.dodajPozycje(pozycja3);
+        //when
+        double suma = zamowienie9.obliczWartoscZRabatek();
+        //then
+        assertEquals(Double.valueOf(pozycja.obliczWartoscZRabatem()
+                        + pozycja2.obliczWartoscZRabatem() + pozycja3.obliczWartoscZRabatem())
+                , Double.valueOf(suma));
+        System.out.println(zamowienie9);
+    }
+    @Test
+    public void testZapiszZamowienieDoPliku(){
+        //given
+        Zamowienie zamowienie9 = new Zamowienie();
+        Pozycja pozycja = new Pozycja("chleb", 2, 2.50);
+        Pozycja pozycja2 = new Pozycja("maslo", 4, 7.50);
+        Pozycja pozycja3 = new Pozycja("kawa", 10, 9.50);
+
+        zamowienie9.dodajPozycje(pozycja);
+        zamowienie9.dodajPozycje(pozycja2);
+        zamowienie9.dodajPozycje(pozycja3);
+        //when
+
+
+        Zamowienie.zapiszZamowienie(zamowienie9, "Test.txt");
+
+        //then
+        Zamowienie zamowienie1 = Zamowienie.wczytajZPliku("Test.txt");
+        assertEquals(zamowienie9.getPozycje(),zamowienie1.getPozycje());
+        assertEquals(zamowienie9,zamowienie1);
+
+
     }
 
 }

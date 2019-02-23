@@ -66,5 +66,44 @@ public class PozycjaTest {
 
         //then
     }
+    @Test
+    public void testPromocjaPoniżej5Sztuk() {
+        //given
+        Pozycja pozycja = new Pozycja("chleb", 4, 10);
+        //when
+        double wartoscZRabatem = pozycja.obliczWartoscZRabatem();
+        //then
+        assertEquals(Double.valueOf(40), Double.valueOf(wartoscZRabatem));
+    }
+
+    @Test
+    public void testPromocjaPwyżej5Sztuk() {
+        //given
+        Pozycja pozycja = new Pozycja("chleb", 6, 100);
+        //when
+        double wartoscZRabatem = pozycja.obliczWartoscZRabatem();
+        //then
+        assertEquals(Double.valueOf(570), Double.valueOf(wartoscZRabatem));
+    }
+
+    @Test
+    public void testPromocjaPwyżej10Sztuk() {
+        //given
+        Pozycja pozycja = new Pozycja("chleb", 19, 100);
+        //when
+        double wartoscZRabatem = pozycja.obliczWartoscZRabatem();
+        //then
+        assertEquals(Double.valueOf(1710), Double.valueOf(wartoscZRabatem));
+    }
+
+    @Test
+    public void testPromocjaPwyżej20Sztuk() {
+        //given
+        Pozycja pozycja = new Pozycja("chleb", 40, 100);
+        //when
+        double wartoscZRabatem = pozycja.obliczWartoscZRabatem();
+        //then
+        assertEquals(Double.valueOf(3400), Double.valueOf(wartoscZRabatem));
+    }
 
 }
