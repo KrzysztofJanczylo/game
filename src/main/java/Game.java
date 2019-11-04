@@ -35,6 +35,30 @@ public class Game {
                     if (nazwa.equals("lern")) {lernGame("Azja.txt");}
                     exit = true;
                     break;
+                case 3:
+                    if (nazwa.equals("start")) {startG("Afryka.txt");}
+                    if (nazwa.equals("startCapitol")) {startCapitol("Afryka.txt");}
+                    if (nazwa.equals("lern")) {lernGame("Afryka.txt");}
+                    exit = true;
+                    break;
+                case 4:
+                    if (nazwa.equals("start")) {startG("AmerykaPolnocna.txt");}
+                    if (nazwa.equals("startCapitol")) {startCapitol("AmerykaPolnocna.txt");}
+                    if (nazwa.equals("lern")) {lernGame("AmerykaPolnocna.txt");}
+                    exit = true;
+                    break;
+                case 5:
+                    if (nazwa.equals("start")) {startG("AmerykaPoludniowa.txt");}
+                    if (nazwa.equals("startCapitol")) {startCapitol("AmerykaPoludniowa.txt");}
+                    if (nazwa.equals("lern")) {lernGame("AmerykaPoludniowa.txt");}
+                    exit = true;
+                    break;
+                case 6:
+                    if (nazwa.equals("start")) {startG("Australia.txt");}
+                    if (nazwa.equals("startCapitol")) {startCapitol("Australia.txt");}
+                    if (nazwa.equals("lern")) {lernGame("Australia.txt");}
+                    exit = true;
+                    break;
                 case 0:
                     exit = true;
 

@@ -1,0 +1,22 @@
+1;Antigua i Barbuda;Saint John’s
+2;Bahamy;Nassau
+3;Barbados;Bridgetown
+4;Belize;Belmopan
+5;Dominika;Roseau
+6;Dominikana;Santo Domingo
+7;Grenada;Saint George’s
+8;Gwatemala;Gwatemala
+9;Haiti;Port-au-Prince
+10;Honduras;Tegucigalpa
+11;Jamajka;Kingston
+12;Kanada;Ottawa
+13;Kostaryka;San José
+14;Kuba;Hawana
+15;Meksyk;Meksyk
+16;Nikaragua;Managua
+17;Panama;Panama
+18;Saint Kitts i Nevis;Basseterre
+19;Saint Lucia;Castries
+20;Saint Vincent i Grenadyny;Kingstown
+21;Salwador;San Salvador
+22;Stany Zjednoczone;Waszyngton

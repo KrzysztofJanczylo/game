@@ -1,0 +1,13 @@
+1;Argentyna;Buenos Aires
+2;Boliwia;La Paz
+3;Brazylia;Brasilia
+4;Chile;Santiago
+5;Ekwador;Quito
+6;Gujana;Georgetown
+7;Kolumbia;Bogota
+8;Paragwaj;Asuncion
+9;Peru;Lima
+10;Surinam;Paramaribo
+11;Trynidad i Tobago;Port-of-Spain
+12;Urugwaj;Montevideo
+13;Wenezuela;Caracas

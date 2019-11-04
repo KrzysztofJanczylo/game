@@ -1,0 +1,54 @@
+1;Algier;Algierska Republika Ludowo-Demokratyczna
+2;Angola;Luanda
+3;Benin;Porto-Novo
+4;Botswana;Gaborone
+5;Burkina Faso;Wagadugu
+6;Burundi;Gitega
+7;Czad;Ndżamena
+8;Demokratyczna Republika Konga;Kinszasa
+9;Dżibuti;Dżibuti
+10;Egipt1);Kair
+11;Erytrea;Asmara
+12;Eswatini;Mbabane
+13;Etiopia;Addis Abeba
+14;Gabon;Libreville
+15;Gambia;Bandżul
+16;Ghana;Akra
+17;Gwinea;Konakry
+18;Gwinea Bissau;Bissau
+19;Gwinea Równikowa;Malabo
+20;Kamerun;Jaunde
+21;Kenia;Nairobi
+22;Komory;Moroni
+23;Kongo;Brazzaville
+24;Lesotho;Maseru
+25;Liberia;Monrovia
+26;Libia;Trypolis
+27;Madagaskar;Antananarywa
+28;Malawi;Lilongwe
+29;Mali;Bamako
+30;Maroko;Rabat
+31;Mauretania;Nawakszut
+32;Mauritius;Port Louis
+33;Mozambik;Maputo
+34;Namibia;Windhuk
+35;Niger;Niamey
+36;Nigeria;Abudża
+37;Południowa Afryka;Pretoria
+38;Republika Środkowoafrykańska;Bangi
+39;Republika Zielonego Przylądka;Praia
+40;Rwanda;Kigali
+41;Senegal;Dakar
+42;Seszele;Victoria
+43;Sierra Leone;Freetown
+44;Somalia;Mogadiszu
+45;Sudan;Chartum
+46;Sudan Południowy;Dżuba
+47;Tanzania;Dodoma
+48;Togo;Lomé
+49;Tunezja;Tunis
+50;Uganda;Kampala
+51;Wybrzeże Kości Słoniowej;Jamusukro
+52;Wyspy Świętego Tomasza i Książęca;São Tomé
+53;Zambia;Lusaka
+54;Zimbabwe;Harare

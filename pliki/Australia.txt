@@ -1,0 +1,14 @@
+1;Australia;Canberra
+2;Fidżi;Suva
+3;Kiribati;Bairiki
+4;Mikronezja;Palikir
+5;Nauru;Yaren
+6;Nowa Zelandia;Wellington
+7;Palau;Ngerulmud
+8;Papua-Nowa Gwinea;Port Moresby
+9;Samoa;Apia
+10;Tonga;Nukuʻalofa
+11;Tuvalu;Vaiaku
+12;Vanuatu;Port Vila
+13;Wyspy Marshalla;Majuro
+14;Wyspy Salomona;Honiara
