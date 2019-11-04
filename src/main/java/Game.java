@@ -84,6 +84,70 @@ public class Game {
 
     }
 
+    private static void startCapitolH(String nazwaKontynentu) {
+        Scanner scannerLine = new Scanner(System.in);
+        try {
+            int iloscPunktow =0;
+            List<String[]> countryList = saveFile(nazwaKontynentu);
+            for (int i =0; i<10;i++) {
+                String[] country = random(countryList);
+                System.out.print(i+1+"/10 ");
+                System.out.println("podaj nazwę stolicy państwa: " + country[1]);
+                String odp = scannerLine.nextLine();
+                if (odp.equals(country[0])) {
+                    System.out.println("Brawo, prawidłowa odpowiedz");
+                    iloscPunktow=iloscPunktow+10;
+                }
+                else {
+                    System.out.println("Niestety nie udało się");
+                }
+                Thread.sleep(1000);
+
+            }
+            replay(nazwaKontynentu, scannerLine, iloscPunktow);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void startCapitolN(String nazwaPliku) {
+        Scanner scannerLine = new Scanner(System.in);
+        try {
+            int iloscPunktow =0;
+            List<String[]> countryList = saveFile(nazwaPliku);
+            for (int i =0; i<10;i++) {
+                String[] country = random(countryList);
+                int end = 3;
+                System.out.print(i+1+"/10 ");
+                System.out.println("podaj nazwę państwa której stolicą jest: " + country[1]);
+                while (end > 0) {
+                    System.out.println("Pozostało prób:" + end);
+                    String odp = scannerLine.nextLine();
+                    if (odp.equals(country[0])) {
+                        System.out.println("Brawo, prawidłowa odpowiedz");
+                        iloscPunktow++;
+                        break;
+                    } else {
+                        end--;
+                    }
+                    if (end == 0) {
+                        System.out.println("Niestety nie udało się");
+                    }
+                    Thread.sleep(1000);
+                }
+            }
+            replay(nazwaPliku, scannerLine, iloscPunktow);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static void startCapitolE(String nazwaPliku) {
         Scanner scannerLine = new Scanner(System.in);
         System.out.println("Zasady są proste, za prawidłową odpowiedz z jedną podopowiedzią zdobywasz 3 punkty\nZa 2 podpowiedzi - 2 punkty\nZa 3 podpowiedzi - 1 punkt");
@@ -91,14 +155,15 @@ public class Game {
             int iloscPunktow =0;
             List<String[]> countryList = saveFile(nazwaPliku);
             for (int i =0; i<10;i++) {
+                System.out.print(i+1+"/10 ");
                 String[] country = random(countryList);
                 int end = 3;
-                System.out.println("podaj nazwę państwa: " + country[1]);
+                System.out.println("podaj nazwę państwa gdzie stolicą jest: " + country[1]);
                 while (end > 0) {
                     System.out.println("Pozostało prób:" + end);
                     System.out.print("Podpowiedz: ");
                     for (int j = 0; j <4-end ; j++) {
-                        System.out.print(country[1].charAt(j)+" ");
+                        System.out.print(country[0].charAt(j)+" ");
                     }
                     for (int j = 4-end; j < country[0].length() ; j++) {
                         System.out.print("_ ");
@@ -167,6 +232,7 @@ public class Game {
             List<String[]> countryList = saveFile(nazwaKontynentu);
             for (int i =0; i<10;i++) {
                 String[] country = random(countryList);
+                System.out.print(i+1+"/10 ");
                 System.out.println("podaj nazwę stolicy państwa: " + country[0]);
                     String odp = scannerLine.nextLine();
                     if (odp.equals(country[1])) {
@@ -263,6 +329,7 @@ public class Game {
             int iloscPunktow =0;
             List<String[]> countryList = saveFile(nazwaPliku);
             for (int i =0; i<10;i++) {
+                System.out.print(i+1+"/10 ");
                 String[] country = random(countryList);
                 int end = 3;
                 System.out.println("podaj nazwę stolicy państwa: " + country[0]);
@@ -309,6 +376,7 @@ public class Game {
                 for (int i =0; i<10;i++) {
                     String[] country = random(countryList);
                     int end = 3;
+                    System.out.print(i+1+"/10 ");
                     System.out.println("podaj nazwę stolicy państwa: " + country[0]);
                     while (end > 0) {
                         System.out.println("Pozostało prób:" + end);
