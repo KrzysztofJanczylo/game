@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.*;
 
 public class Game {
@@ -8,7 +7,8 @@ public class Game {
 
     public static void start(String nazwa) {
         Scanner scannerLine = new Scanner(System.in);
-        if (nazwa.equals("start")) {System.out.println("-- NOWA GRA --");}
+        if (nazwa.equals("start")) {System.out.println("-- NOWA GRA - ZGADNIJ STOLICĘ --");}
+        if (nazwa.equals("startCapitol")) {System.out.println("-- NOWA GRA - ZGADNIJ NAZWĘ PAŃSTWA --");}
         if (nazwa.equals("lern")) {System.out.println("-- TRYB UCZENIA SIĘ --");}
         System.out.println("\nWybierz kontynent:");
         System.out.println("1 - Europa");
@@ -25,11 +25,13 @@ public class Game {
             switch (menu) {
                 case 1:
                     if (nazwa.equals("start")) {startG("Europa.txt");}
+                    if (nazwa.equals("startCapitol")) {startCapitol("Europa.txt");}
                     if (nazwa.equals("lern")) {lernGame("Europa.txt");}
                     exit = true;
                     break;
                 case 2:
                     if (nazwa.equals("start")) {startG("Azja.txt");}
+                    if (nazwa.equals("startCapitol")) {startCapitol("Azja.txt");}
                     if (nazwa.equals("lern")) {lernGame("Azja.txt");}
                     exit = true;
                     break;
@@ -42,14 +44,94 @@ public class Game {
         }
     }
 
-    public static void startG (String nazwaKontynentu){
-        Scanner scannerLine = new Scanner(System.in);
+    private static void soutLevelText(){
         System.out.println("-- NOWA GRA --");
         System.out.println("\nWybierz poziom:");
         System.out.println("1 - Easy");
         System.out.println("2 - Normal");
         System.out.println("3 - Hard");
         System.out.println("\n0 - Wróc od głownego menu");
+
+    }
+
+    private static void startCapitol(String nazwaKontynentu) {
+        Scanner scannerLine = new Scanner(System.in);
+        soutLevelText();
+        int menu = scannerLine.nextInt();
+        boolean exit = false;
+        while (!exit) {
+            switch (menu) {
+                case 1:
+                    startCapitolE(nazwaKontynentu);
+                    exit = true;
+                    break;
+                case 2:
+                    startCapitolN(nazwaKontynentu);
+                    exit = true;
+                    break;
+                case 3:
+                    startCapitolH(nazwaKontynentu);
+                    exit = true;
+                    break;
+                case 0:
+                    exit = true;
+
+                default:
+                    System.out.println("Błędna wartość, srpóbuj jeszcze raz");
+            }
+        }
+
+
+    }
+
+    private static void startCapitolE(String nazwaPliku) {
+        Scanner scannerLine = new Scanner(System.in);
+        System.out.println("Zasady są proste, za prawidłową odpowiedz z jedną podopowiedzią zdobywasz 3 punkty\nZa 2 podpowiedzi - 2 punkty\nZa 3 podpowiedzi - 1 punkt");
+        try {
+            int iloscPunktow =0;
+            List<String[]> countryList = saveFile(nazwaPliku);
+            for (int i =0; i<10;i++) {
+                String[] country = random(countryList);
+                int end = 3;
+                System.out.println("podaj nazwę państwa: " + country[1]);
+                while (end > 0) {
+                    System.out.println("Pozostało prób:" + end);
+                    System.out.print("Podpowiedz: ");
+                    for (int j = 0; j <4-end ; j++) {
+                        System.out.print(country[1].charAt(j)+" ");
+                    }
+                    for (int j = 4-end; j < country[0].length() ; j++) {
+                        System.out.print("_ ");
+                    }
+                    System.out.println("");
+                    String odp = scannerLine.nextLine();
+                    if (odp.equals(country[0])) {
+                        System.out.println("Brawo, prawidłowa odpowiedz");
+                        iloscPunktow=iloscPunktow+end;
+                        break;
+                    } else {
+                        end--;
+                    }
+                    if (end == 0) {
+                        System.out.println("Niestety nie udało się");
+                    }
+                    Thread.sleep(1000);
+                }
+            }
+            System.out.println("Zdobyłeś "+iloscPunktow+" punktów na 30");
+
+            replay(nazwaPliku, scannerLine, iloscPunktow);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void startG (String nazwaKontynentu){
+        Scanner scannerLine = new Scanner(System.in);
+        soutLevelText();
 
         int menu = scannerLine.nextInt();
         boolean exit = false;

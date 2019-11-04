@@ -13,10 +13,10 @@ public class App {
         boolean exit = false;
         while (!exit) {
             System.out.println("-- MENU --");
-            System.out.println("1 - Nowa gra");
-            System.out.println("2 - Tryb uczenia się");
+            System.out.println("1 - Nowa gra - zgadnij stolicę");
+            System.out.println("2 - Nowa gra - zgadnij nazwę państwa");
+            System.out.println("3- Tryb uczenia się");
             System.out.println("-------------------------------");
-            System.out.println("3 - Dodaj nowe zamówiene");
             System.out.println("4 - Edytuj zamówienie");
             System.out.println("5 - Wyświetl podsumowanie zamówień");
             System.out.println("6 - Dodaj klienta");
@@ -31,24 +31,12 @@ public class App {
             switch (menu) {
                 case 1:
                     Game.start("start");
-//                    File folder = new File("pliki");
-//                    File[] listOfFiles = folder.listFiles();
-//                    for (File listOfFile : listOfFiles) {
-//                        Zamowienie zamowienie = Zamowienie.wczytajZPliku(listOfFile.getName());
-//                        String key = listOfFile.getName().replace(".txt", "");
-//                        dane.put(key, zamowienie);
-//                    }
                     break;
                 case 2:
-
-                    Game.start("lern");
-
+                    Game.start("startCapitol");
                     break;
                 case 3:
-                    Zamowienie zamowienie = new Zamowienie();
-                    System.out.println("Podaj numer zamowienia");
-                    dane.put(scanner.next(), zamowienie);
-                    dodajPozycje(scanner, zamowienie);
+                    Game.start("lern");
                     break;
                 case 4:
                     System.out.println("Podaj numer zamówienia");
