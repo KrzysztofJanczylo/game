@@ -1,0 +1,44 @@
+1;Albania;Tirana
+2;Andora;Andora
+3;Austria;Wiedeń
+4;Belgia;Bruksela
+5;Białoruś;Mińsk
+6;Bośnia i Hercegowina;Sarajewo
+7;Bułgaria;Sofia
+8;Chorwacja;Zagrzeb
+9;Dania;Kopenhaga
+10;Estonia;Tallin
+11;Finlandia;Helsinki
+12;Francja;Paryż
+13;Grecja;Ateny
+14;Hiszpania;Madryt
+15;Holandia;Amsterdam
+16;Irlandia;Dublin
+17;Islandia;Rejkiawik
+18;Kazachstan;Astana
+19;Liechtenstein;Vaduz
+20;Litwa;Wilno
+21;Luksemburg;Luksemburg
+22;Łotwa;Ryga
+23;Macedonia;Skopie
+24;Malta;Valletta
+25;Mołdawia;Kiszyniów
+26;Monako;Monako
+27;Niemcy;Berlin
+28;Norwegia;Oslo
+29;Polska;Warszawa
+30;Portugalia;Lizbona
+31;Republika Czeska;Praga
+32;Rosja;Moskwa
+33;Rumunia;Bukareszt
+34;SanMarino;SanMarino
+35;Słowacja;Bratysława
+36;Słowenia;Lublana
+37;Szwajcaria;Berno
+38;Szwecja;Sztokholm
+39;Turcja;Ankara
+40;Ukraina;Kijów
+41;Watykan;Watykan
+42;Węgry;Budapeszt
+43;Wielka Brytania;Londyn
+44;Włochy;Rzym

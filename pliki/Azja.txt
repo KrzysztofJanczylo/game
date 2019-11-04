@@ -1,0 +1,48 @@
+1;Afganistan;Kabul
+2;Arabia Saudyjska;Rijad
+3;Armenia;Erywań
+4;Azerbejdżan;Baku
+5;Bahrajn;Manama
+6;Bangladesz;Dhaka
+7;Bhutan;Thimphu
+8;Brunei;Bandar Seri Begawan
+9;Chiny;Pekin
+10;Cypr;Nikozja
+11;Filipiny;Manila
+12;Gruzja;Tbilisi
+13;Indie;Nowe Delhi
+14;Indonezja;Dżakarta
+15;Irak;Bagdad
+16;Iran;Teheran
+17;Izrael;Jerozolima
+18;Japonia;Tokio
+19;Jemen;Sana
+20;Jordania;Amman
+21;Kambodża;Phnom Penh
+22;Katar;Doha
+23;Kazachstan;Nur-Sułtan
+24;Kirgistan;Biszkek
+25;Korea Południowa;Seul
+26;Korea Północna;Pjongjang
+27;Kuwejt;Kuwejt
+28;Laos;Wientian
+29;Liban;Bejrut
+30;Malediwy;Male
+31;Malezja;Kuala Lumpur
+32;Mjanma;Naypyidaw
+33;Mongolia;Ułan Bator
+34;Nepal;Katmandu
+35;Oman;Maskat
+36;Pakistan;Islamabad
+37;Rosja;Moskwa
+38;Singapur;Singapur
+39;Sri Lanka;Sri Dźajawardanapura Kotte
+40;Syria;Damaszek
+41;Tadżykistan;Duszanbe
+42;Tajlandia;Bangkok
+43;Timor Wschodni;Dili
+44;Turcja;Ankara
+45;Turkmenistan;Aszchabad
+46;Uzbekistan;Taszkent
+47;Wietnam;Hanoi
+48;Zjednoczone Emiraty Arabskie;Abu Zabi

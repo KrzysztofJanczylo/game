@@ -56,4 +56,48 @@ public class KlientTest {
 
         //then
     }
+
+    @Test
+    public void testKonstruktoraPoprawnyNip() {
+        //given
+        long nip = 7612731690L;
+        //when
+        Klient klient = new Klient("DELTA",nip,"ul Sienkiewicza");
+
+        //then
+        assertEquals(nip, klient.getNip());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testKonstruktoraNiePoprawnyNip() {
+        //given
+        long nip = 7612731190L;
+        //when
+        Klient klient = new Klient("DELTA",nip,"ul Sienkiewicza");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNulloweImie(){
+        //give
+        Klient klient = new Klient(null,"kowalski", 60022733609L,"Londek Zdrój");
+        //then
+        //when
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testPusteImie(){
+        //give
+        Klient klient = new Klient("","kowalski", 60022733609L,"Londek Zdrój");
+        //then
+        //when
+    }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testPustyAdresFirmy(){
+        //give
+        Klient klient = new Klient("FIRST DAT", 5335047650L,"");
+        //then
+        //when
+    }
 }
